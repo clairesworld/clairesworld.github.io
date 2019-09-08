@@ -1,0 +1,127 @@
+.scrolling-wrapper-flexbox {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+#card {
+  flex: 0 0 auto;
+  display: inline-block;
+  border: black 1px solid;
+  background-color: white;
+  text-align: center;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  font-family: times new roman, 'serif';
+  font-size: 20px;
+  max-width: 550px;
+}
+
+#vcontainer {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+#hcontainer {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+#callingcard {
+  display: inline-block;
+  border: black 3px solid;
+  background-color: white;
+  text-align: center;
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  font-family: times new roman, 'serif';
+  font-size: 28px;
+}
+a #content{font-weight:normal;text-decoration:none;}
+
+#menu {
+  display: inline-block;
+  text-align: left;
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 30px;
+  font-family: times new roman, 'serif';
+  font-size: 20px;
+}
+
+#footer
+{
+    font-family: times new roman, 'serif';
+    font-size: 12px;
+    clear: both;
+    color: Thistle;
+    padding: 0;
+    text-align: center;
+    vertical-align: bottom;
+    line-height: normal;
+    margin: 0;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+
+
+[id^="togList"],                        /* HIDE CHECKBOX */
+[id^="togList"] ~ .list,                /* HIDE LIST */
+[id^="togList"] + label  span + span,   /* HIDE "Collapse" */
+[id^="togList"]:checked + label span{   /* HIDE "Expand" (IF CHECKED) */
+  display:none;
+}
+[id^="togList"]:checked + label span + span{
+  display:inline-block;                 /* SHOW "Collapse" (IF CHECKED) */
+}
+[id^="togList"]:checked ~ .list{
+  display:block;                        /* SHOW LIST (IF CHECKED) */
+}
+
+
+@media only screen and (max-width: 320px) {
+#menu {
+  display: inline-block;
+  text-align: left;
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 30px;
+  font-family: times new roman, 'serif';
+  font-size: 50px;
+}
+
+#card {
+  flex: 0 0 auto;
+  display: inline-block;
+  border: black 1px solid;
+  background-color: white;
+  text-align: center;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  font-family: times new roman, 'serif';
+  font-size: 40px;
+  max-width: 550px;
+}
+
+#callingcard {
+  display: inline-block;
+  border: black 3px solid;
+  background-color: white;
+  text-align: center;
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  font-family: times new roman, 'serif';
+  font-size: 40px;
+}
+}
