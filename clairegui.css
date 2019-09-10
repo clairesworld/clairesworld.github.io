@@ -97,7 +97,7 @@ a #content{font-weight:normal;text-decoration:none;}
 }
 
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 450px) {
 #menu {
   display: inline-block;
   text-align: left;
