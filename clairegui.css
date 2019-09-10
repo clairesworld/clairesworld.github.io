@@ -1,7 +1,49 @@
+
+@media only screen and (max-width: 450px) {
+#menu {
+  display: inline-block;
+  text-align: left;
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 30px;
+  font-family: times new roman, 'serif';
+  font-size: 50px;
+}
+
+#card {
+  flex: 0 0 auto;
+  display: inline-block;
+  border: black 1px solid;
+  background-color: white;
+  text-align: center;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  font-family: times new roman, 'serif';
+  font-size: 40px;
+  max-width: 550px;
+}
+
+#callingcard {
+  display: inline-block;
+  border: black 3px solid;
+  background-color: white;
+  text-align: center;
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  font-family: times new roman, 'serif';
+  font-size: 40px;
+}
+}
+
 .scrolling-wrapper-flexbox {
   display: flex;
   flex-wrap: nowrap;
-  overflow-x: auto;
+  overflow-x: scroll; 
 }
 
 #card {
@@ -97,43 +139,4 @@ a #content{font-weight:normal;text-decoration:none;}
 }
 
 
-@media only screen and (max-width: 450px) {
-#menu {
-  display: inline-block;
-  text-align: left;
-  padding-top: 50px;
-  padding-right: 30px;
-  padding-bottom: 50px;
-  padding-left: 30px;
-  font-family: times new roman, 'serif';
-  font-size: 50px;
-}
 
-#card {
-  flex: 0 0 auto;
-  display: inline-block;
-  border: black 1px solid;
-  background-color: white;
-  text-align: center;
-  padding-top: 10px;
-  padding-right: 10px;
-  padding-bottom: 20px;
-  padding-left: 10px;
-  font-family: times new roman, 'serif';
-  font-size: 40px;
-  max-width: 550px;
-}
-
-#callingcard {
-  display: inline-block;
-  border: black 3px solid;
-  background-color: white;
-  text-align: center;
-  padding-top: 50px;
-  padding-right: 30px;
-  padding-bottom: 20px;
-  padding-left: 30px;
-  font-family: times new roman, 'serif';
-  font-size: 40px;
-}
-}
