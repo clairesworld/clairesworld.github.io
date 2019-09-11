@@ -97,7 +97,6 @@ a #content{font-weight:normal;text-decoration:none;}
 }
 
 #form {
-  border: black 1px solid;
   display: inline-block;
   text-align: center;
   padding-top: 50px;
