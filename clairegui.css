@@ -11,6 +11,17 @@
   font-size: 50px;
 }
 
+#menu {
+  display: inline-block;
+  text-align: left;
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 30px;
+  font-family: times new roman, 'serif';
+  font-size: 35px;
+}
+
 #card {
   flex: 0 0 auto;
   display: inline-block;
@@ -36,7 +47,13 @@
   padding-bottom: 20px;
   padding-left: 30px;
   font-family: times new roman, 'serif';
-  font-size: 40px;
+  font-size: 30px;
+}
+
+#hcontainer {
+  display: table-cell;
+  vertical-align: top;
+  text-align: center;
 }
 }
 
@@ -86,6 +103,17 @@
 a #content{font-weight:normal;text-decoration:none;}
 
 #menu {
+  display: inline-block;
+  text-align: left;
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 30px;
+  font-family: times new roman, 'serif';
+  font-size: 20px;
+}
+
+#research {
   display: inline-block;
   text-align: left;
   padding-top: 50px;
