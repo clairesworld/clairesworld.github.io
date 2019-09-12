@@ -3,23 +3,23 @@
 #menu {
   display: inline-block;
   text-align: left;
-  padding-top: 50px;
+  padding-top: 20px;
   padding-right: 30px;
   padding-bottom: 50px;
   padding-left: 30px;
   font-family: times new roman, 'serif';
-  font-size: 50px;
+  font-size: 45px;
 }
 
 #research {
   display: inline-block;
   text-align: left;
-  padding-top: 50px;
+  padding-top: 30px;
   padding-right: 30px;
   padding-bottom: 50px;
   padding-left: 30px;
   font-family: times new roman, 'serif';
-  font-size: 35px;
+  font-size: 3vw;
 }
 
 #card {
@@ -33,8 +33,8 @@
   padding-bottom: 20px;
   padding-left: 10px;
   font-family: times new roman, 'serif';
-  font-size: 20px;
-  max-width: 450px;
+  font-size: 3vw;
+  max-width: 400px;
 }
 
 #callingcard {
@@ -47,7 +47,7 @@
   padding-bottom: 20px;
   padding-left: 30px;
   font-family: times new roman, 'serif';
-  font-size: 30px;
+  font-size: 3vw;
 }
 
 #hcontainer {
@@ -56,6 +56,11 @@
   text-align: center;
 }
 }
+
+
+
+
+
 
 .scrolling-wrapper-flexbox {
   display: flex;
