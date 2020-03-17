@@ -37,6 +37,7 @@
   max-width: 400px;
 }
 
+
 #callingcard {
   display: inline-block;
   border: black 3px solid;
@@ -81,6 +82,21 @@
   font-family: times new roman, latin modern roman, gentium book basic, TeX Gyre Schola Math, freeserif, 'serif';
   font-size: 20px;
   max-width: 550px;
+}
+
+#card-poster {
+  flex: 0 0 auto;
+  display: inline-block;
+  border: black 0px solid;
+  background-color: white;
+  text-align: left;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  font-family: times new roman, latin modern roman, gentium book basic, TeX Gyre Schola Math, freeserif, 'serif';
+  font-size: 20px;
+  max-width: 210px;
 }
 
 #vcontainer {
