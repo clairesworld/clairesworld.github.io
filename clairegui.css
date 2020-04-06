@@ -69,7 +69,7 @@
   overflow-x: scroll; 
 }
 
-#card {
+#tile {
   flex: 0 0 auto;
   display: inline-block;
   border: black 1px solid;
@@ -81,13 +81,13 @@
   padding-left: 10px;
   font-family: times new roman, latin modern roman, gentium book basic, TeX Gyre Schola Math, freeserif, 'serif';
   font-size: 20px;
-  max-width: 550px;
+  max-width: 500px;
 }
 
-#card-poster {
+#name_left {
   flex: 0 0 auto;
   display: inline-block;
-  border: black 0px solid;
+  border: 0px;
   background-color: white;
   text-align: left;
   padding-top: 10px;
@@ -95,9 +95,10 @@
   padding-bottom: 20px;
   padding-left: 10px;
   font-family: times new roman, latin modern roman, gentium book basic, TeX Gyre Schola Math, freeserif, 'serif';
-  font-size: 20px;
-  max-width: 210px;
+  font-size: 14px;
+  max-width: 40px;
 }
+
 
 #vcontainer {
   display: table;
@@ -114,9 +115,9 @@
   border: black 3px solid;
   background-color: white;
   text-align: center;
-  padding-top: 50px;
+  padding-top: 70px;
   padding-right: 30px;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
   padding-left: 30px;
   font-family: times new roman, latin modern roman, gentium book basic, TeX Gyre Schola Math, freeserif, 'serif';
   font-size: 28px;
