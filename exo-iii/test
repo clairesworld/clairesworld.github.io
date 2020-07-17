@@ -1,0 +1,223 @@
+<!DOCTYPE html>   
+<html>  
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+<link href = "https://cdnjs.cloudflare.com/ajax/libs/slick-lightbox/0.2.8/slick-lightbox.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-lightbox/0.2.12/slick-lightbox.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-lightbox/0.2.12/slick-lightbox.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-lightbox/0.2.12/slick-lightbox.min.js.map"></script>
+</head>
+<style>   
+ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:700;}dfn{font-style:italic;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em;}pre{white-space:pre-wrap;word-wrap:break-word;}q{quotes:\201C \201D \2018 \2019;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,html input[type=button],/* 1 */
+ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}button[disabled],input[disabled]{cursor:default;}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}body,figure{margin:0;}legend,button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
+ 
+ .clearfix:after {visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+ 
+ * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; } 
+div.panel {
+  position: absolute;
+  border: 1px solid #000000;
+}
+
+#btnLeft:active {
+    width: 600px;
+    height: 600px;
+}
+
+img {
+  width: 100%;
+}
+
+</style>
+</head>
+<body>
+
+<div class="slick-lightbox">
+<div class="panel" style="  
+  top: 20px;
+  left: 20px;
+  width: 300px;
+  height: 300px;">
+    <a href = "img/0_title.gif">
+<img src="img/0_title.gif" alt="TITLE" style="width: 100%"> <!--id="btnLeft"-->
+</a>
+</div>
+
+<div class="panel" style="  
+  top: 20px;
+  left: 350px;
+  width: 140px;
+  height: 140px;">
+<a href="img/1_intro.gif">
+<img src="img/1_intro.gif" alt="INTRO 1" style="width: 100%"></a>
+</div>
+
+<div class="panel" style="  
+  top: 20px;
+  left: 510px;
+  width: 140px;
+  height: 140px;">
+<a href="img/2_intro.gif">
+<img src="img/2_intro.gif" alt="INTRO 2" style="width: 100%"></a>
+</div>
+
+<div class="panel" style="  
+  top: 180px;
+  left: 350px;
+  width: 140px;
+  height: 140px;">
+<a href="img/3_intro.gif">
+<img src="img/3_intro.gif" alt="INTRO 3" style="width: 100%"></a>
+</div>
+
+<div class="panel" style="  
+  top: 180px;
+  left: 510px;
+  width: 140px;
+  height: 140px;">
+<a href="img/4_intro.gif">
+<img src="img/4_intro.gif" alt="INTRO 4" style="width: 100%"></a>
+</div>
+
+<!-- <div class="panel" style="border: 0px;  
+  top: 20px;
+  left: 700px;
+  width: 300px;
+  height: 640px;"> 
+  </div> -->
+
+  <div class="panel" style="  
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    height: 200px;">
+    <a href="img/5a_therm.gif">
+    <img src="img/5a_therm.gif" alt="THERMAL HISTORY" style="width: 100%"> <!--id="btnLeft"-->
+    </a>  
+</div>
+
+  <div class="panel" style="  
+    top: 210px;
+    left: 0px;
+    width: 300px;
+    height: 20px;">
+    <a href ="img/5b_descent.gif">
+   <img src="img/5b_descent.gif" alt="DESCENT 1" style="width: 100%"> <!--id="btnLeft"-->
+   </a>
+  </div>
+
+  <div class="panel" style="  
+    top: 240px;
+    left: 0px;
+    width: 300px;
+    height: 120px;">
+    <a href="img/5c_therm.gif">
+    <img src="img/5c_therm.gif" alt="THERMAL HISTORY" style="width: 100%"> <!--id="btnLeft"-->
+    </a>  
+  </div>
+
+  <div class="panel" style="  
+    top: 370px;
+    left: 0px;
+    width: 300px;
+    height: 20px;">
+    <a href = "img/5d_descent.gif">
+    <img src="img/5d_descent.gif" alt="DESCENT 2" style="width: 100%"> <!--id="btnLeft"-->
+    </a>
+  </div>
+
+
+  <div class="panel" style="border: 0px;  
+    top: 400px;
+    left: 0px;
+    width: 300px;
+    height: 240px;">
+  <a href="img/5e_theory.gif">
+  <img src="img/5e_theory.gif" alt="DESCENT 3" style="width: 100%"> <!--id="btnLeft"-->
+  </a>
+  </div>
+
+<!--
+  <div class="panel" style="  
+    top: 430px;
+    left: 0px;
+    width: 300px;
+    height: 40px;">
+  </div>
+
+  <div class="panel" style="  
+    top: 480px;
+    left: 0px;
+    width: 300px;
+    height: 60px;">
+  </div>
+
+  <div class="panel" style="  
+    top: 550px;
+    left: 0px;
+    width: 300px;
+    height: 90px;">
+  </div>
+-->
+
+
+</div>
+
+<div class="panel" style="  
+  top: 360px;
+  left: 20px;
+  width: 50px;
+  height: 300px;">
+  <a href = "img/6.gif">
+  <img src="img/6.gif" alt="" style="width: 100%"> <!--id="btnLeft"-->
+  </a>
+</div>
+
+<div class="panel" style="  
+  top: 360px;
+  left: 90px;
+  width: 260px;
+  height: 300px;">
+  <a href="img/7_scalings.gif">
+  <img src="img/7_scalings.gif" alt="DYNAMIC TOPOGRAPHY SCALINGS" style="width: 100%"> <!--id="btnLeft"-->
+  </a>
+</div>
+
+<div class="panel" style="  
+  top: 360px;
+  left: 370px;
+  width: 50px;
+  height: 300px;">
+      <a href = "img/8.gif">
+  <img src="img/8.gif" alt="" style="width: 100%"> <!--id="btnLeft"-->
+  </a>
+</div>
+
+<div class="panel" style="  
+  top: 360px;
+  left: 440px;
+  width: 230px;
+  height: 300px;">
+  <a href="img/9_ocn.gif">
+  <img src="img/9_ocn.gif" alt="OCEAN CAPACITY" style="width: 100%"> <!--id="btnLeft"-->
+  </a>
+</div>
+
+</div>
+
+
+<script>
+
+// $('.slick-lightbox').slickLightbox({
+//    itemSelector        : 'a',
+//   navigateByKeyboard  : true 
+// });
+</script>
+</body>
+</html>
+

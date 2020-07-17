@@ -1,6 +1,11 @@
 <!DOCTYPE html>   
 <html>  
 <head>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+</head>
 <style>   
  
 div.panel {
@@ -23,7 +28,10 @@ div.panel {
   left: 20px;
   width: 300px;
   height: 300px;">
-<img src="img/0_title.gif" alt="TITLE" style="width: 100%"> <!--id="btnLeft"-->
+  <a data-fancybox= "gallery" href = "img/0_title.gif">
+<img src="img/0_title.gif" alt="TITLE" style="width: 100%"> 
+</a>
+<!--id="btnLeft"-->
 </div>
 
 <div class="panel" style="  
@@ -31,7 +39,7 @@ div.panel {
   left: 350px;
   width: 140px;
   height: 140px;">
-<a href="img/1_intro.gif">
+<a data-fancybox="gallery" href="img/1_intro.gif">
 <img src="img/1_intro.gif" alt="INTRO 1" style="width: 100%"></a>
 </div>
 
@@ -40,7 +48,7 @@ div.panel {
   left: 510px;
   width: 140px;
   height: 140px;">
-<a href="img/2_intro.gif">
+<a data-fancybox="gallery" href="img/2_intro.gif">
 <img src="img/2_intro.gif" alt="INTRO 2" style="width: 100%"></a>
 </div>
 
@@ -49,7 +57,7 @@ div.panel {
   left: 350px;
   width: 140px;
   height: 140px;">
-<a href="img/3_intro.gif">
+<a data-fancybox="gallery" href="img/3_intro.gif">
 <img src="img/3_intro.gif" alt="INTRO 3" style="width: 100%"></a>
 </div>
 
@@ -58,7 +66,7 @@ div.panel {
   left: 510px;
   width: 140px;
   height: 140px;">
-<a href="img/4_intro.gif">
+<a data-fancybox="gallery" href="img/4_intro.gif">
 <img src="img/4_intro.gif" alt="INTRO 4" style="width: 100%"></a>
 </div>
 
@@ -73,7 +81,7 @@ div.panel {
     left: 0px;
     width: 300px;
     height: 200px;">
-    <a href="img/5a_therm.gif">
+    <a data-fancybox="gallery" href="img/5a_therm.gif">
     <img src="img/5a_therm.gif" alt="THERMAL HISTORY" style="width: 100%"> <!--id="btnLeft"-->
     </a>  
 </div>
@@ -83,7 +91,10 @@ div.panel {
     left: 0px;
     width: 300px;
     height: 20px;">
-   <img src="img/5b_descent.gif" alt="DESCENT 1" style="width: 100%"> <!--id="btnLeft"-->
+    <a href = "img/5b_descent.gif" data-fancybox="gallery">
+   <img src="img/5b_descent.gif" alt="DESCENT 1" style="width: 100%">
+   </a>
+   <!--id="btnLeft"-->
   </div>
 
   <div class="panel" style="  
@@ -91,7 +102,7 @@ div.panel {
     left: 0px;
     width: 300px;
     height: 120px;">
-    <a href="img/5c_therm.gif">
+    <a data-fancybox="gallery" href="img/5c_therm.gif">
     <img src="img/5c_therm.gif" alt="THERMAL HISTORY" style="width: 100%"> <!--id="btnLeft"-->
     </a>  
   </div>
@@ -101,7 +112,9 @@ div.panel {
     left: 0px;
     width: 300px;
     height: 20px;">
+    <a href ="img/5d_descent.gif" data-fancybox="gallery">
     <img src="img/5d_descent.gif" alt="DESCENT 2" style="width: 100%"> <!--id="btnLeft"-->
+    </a>
   </div>
 
 
@@ -110,7 +123,7 @@ div.panel {
     left: 0px;
     width: 300px;
     height: 240px;">
-  <a href="img/5e_theory.gif">
+  <a data-fancybox="gallery" href="img/5e_theory.gif">
   <img src="img/5e_theory.gif" alt="DESCENT 3" style="width: 100%"> <!--id="btnLeft"-->
   </a>
   </div>
@@ -146,7 +159,9 @@ div.panel {
   left: 20px;
   width: 50px;
   height: 300px;">
-  <img src="img/6.gif" alt="" style="width: 100%"> <!--id="btnLeft"-->
+  <a data-fancybox="gallery" href = "img/6.gif">
+  <img  src="img/6.gif" alt="" style="width: 100%"> <!--id="btnLeft"-->
+  </a>
 </div>
 
 <div class="panel" style="  
@@ -154,7 +169,7 @@ div.panel {
   left: 90px;
   width: 260px;
   height: 300px;">
-  <a href="img/7_scalings.gif">
+  <a data-fancybox="gallery" href="img/7_scalings.gif">
   <img src="img/7_scalings.gif" alt="DYNAMIC TOPOGRAPHY SCALINGS" style="width: 100%"> <!--id="btnLeft"-->
   </a>
 </div>
@@ -164,7 +179,10 @@ div.panel {
   left: 370px;
   width: 50px;
   height: 300px;">
-  <img src="img/8.gif" alt="" style="width: 100%"> <!--id="btnLeft"-->
+  <a data-fancybox="gallery" href="img/8.gif">
+  <img src="img/8.gif" alt="" style="width: 100%; display: block;"> 
+  </a>
+  <!--id="btnLeft"-->
 </div>
 
 <div class="panel" style="  
@@ -172,7 +190,7 @@ div.panel {
   left: 440px;
   width: 230px;
   height: 300px;">
-  <a href="img/9_ocn.gif">
+  <a data-fancybox="gallery" href="img/9_ocn.gif">
   <img src="img/9_ocn.gif" alt="OCEAN CAPACITY" style="width: 100%"> <!--id="btnLeft"-->
   </a>
 </div>
@@ -180,4 +198,3 @@ div.panel {
 
 </body>
 </html>
-
