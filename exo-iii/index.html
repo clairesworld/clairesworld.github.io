@@ -214,8 +214,8 @@ div.panel-noclick {
     
     <div style="position: absolute; top:0px; left:0px, height:20px; width:1000px; margin: 0; ">
         <!-- progress bar-->
-        <div style="background-color:#000000;border-radius:0px;width:250px;height:8px;
-                    position:absolute; right:350px; top:5px;">
+        <div style="background-color:#ffffff;border-radius:0px;width:250px;height:8px;
+                    position:absolute;right:350px; top:5px;border:1px solid #000000">
             <div style="background-color:red;border-radius:0px;width:25%;height:8px;"
                  id="progress-bar">
             </div>
@@ -351,9 +351,11 @@ var pauseAudio = function() {
 } 
     
     function makeShadow(ident){
-        a = document.getElementById( ident )
+        a = document.getElementById( ident );
         var h = a.clientHeight;
         var yi = 40;
+        var y_bot0 = yi+527;
+        var x_right0 = 617;
         var y = 40;
         var x1 = 0;
         var y1 = yi+h+y;
@@ -362,9 +364,9 @@ var pauseAudio = function() {
         }
         var x2 = 90;
         var y2 = yi+h;
-        var x3 = 617;
-        var y3 = 20+h;
-        var x4 = 617 - 90/y*(640-h);
+        var x3 = x_right0;
+        var y3 = yi+h;
+        var x4 = y_bot0 - 90/y*(640-h);
         if (x4 < 0){
             x4 = 0;
         }
@@ -373,7 +375,7 @@ var pauseAudio = function() {
         var y5 = 660;
         
         var coords = "<polygon class='shadow' points='"+String(x1)+","+String(y1)+" "+String(x2)+","+String(y2)+" "+String(x3)+","+String(y3)+" "+String(x4)+","+String(y4)+" "+String(x5)+","+String(y5)+"' />";
-        
+        console.log('writing shadow, y'+String())
         document.getElementById( "respond" ).innerHTML = coords
     }
 
