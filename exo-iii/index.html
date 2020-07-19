@@ -5,7 +5,7 @@
     <style>  
 
 .shadow{
-    fill:LightGray; stroke-width:0;
+    fill:#e2e2e2; stroke-width:0;
 }        
 
 .zoomout {
@@ -25,7 +25,7 @@
   left: 20px;
   width: 1000px;
   height: 660px;
-    border: 1px solid #000000;
+    border: 1px solid #e2e2e2;
   display: none;
 }
 
@@ -56,6 +56,8 @@ div.panel-noclick {
   position: absolute;
   border: 1px solid #000000;
 }
+        
+
         
 
 </style>
@@ -209,14 +211,26 @@ div.panel-noclick {
     
     
 <div id="zoominview" class="zoomin">
-
-    <div style="  
+    
+    <div style="position: absolute; top:0px; left:0px, height:20px; width:1000px; margin: 0; ">
+        <!-- progress bar-->
+        <div style="background-color:#000000;border-radius:0px;width:250px;height:8px;
+                    position:absolute; right:350px; top:5px;">
+            <div style="background-color:red;border-radius:0px;width:25%;height:8px;"
+                 id="progress-bar">
+            </div>
+        </div>
+    </div>
+    
+    
+    <div style="  position: absolute;
         top: 0px;
         left: 0px;
         width: 617px;
         height: 660px;">
-        <div class="zoom-panel" style="  
-            top: 20px;
+
+        <div class="zoom-panel" style="  position: absolute;
+            top: 40px;
             left: 90px;
             width: 527px;
             height: 620px;">
@@ -231,18 +245,20 @@ div.panel-noclick {
     
     
     <div class="zoom-panel" style="  
-        top: 20px;
+        top: 40px;
         left: 580px;
         width: 413px;
-        height: 527px;
-                                   border: 0px;">
+        height: 527px;border: 0px;">
+        
 
+
+        
         <div style="  margin: 0;
                     position: absolute;
                     top: 35%;
                     left: 50%;
                     -ms-transform: translate(-50%, -50%);
-                    transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%); 
                     ">
             <input type="button" id="playbtn" onclick="playAudio()" style="display: block;" value="Pick up headphones">
          </div>
@@ -304,7 +320,7 @@ function changeImage(count) {
     }
     
     document.getElementById("imgClickAndChange").src = "https://clairesworld.github.io/exo-iii/img/"+String(current)+".gif";
-    
+    document.getElementById("progress-bar").style.width=String(100/9*current)+'%';
     makeShadow("imgClickAndChange")
 
      // update audio track
@@ -337,14 +353,15 @@ var pauseAudio = function() {
     function makeShadow(ident){
         a = document.getElementById( ident )
         var h = a.clientHeight;
+        var yi = 40;
         var y = 40;
         var x1 = 0;
-        var y1 = 20+h+y;
+        var y1 = yi+h+y;
         if (y1 > 660){
             y1 = 660;
         }
         var x2 = 90;
-        var y2 = 20+h;
+        var y2 = yi+h;
         var x3 = 617;
         var y3 = 20+h;
         var x4 = 617 - 90/y*(640-h);
