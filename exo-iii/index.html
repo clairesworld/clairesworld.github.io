@@ -4,11 +4,15 @@
     <meta charset="utf-8"/>
     <style>  
 
+.shadow{
+    fill:LightGray; stroke-width:0;
+}        
+
 .zoomout {
   position: absolute;
   border: 0px;
-  top: 0px;
-  left: 0px;
+  top: 20px;
+  left: 20px;
   width: 1000px;
   height: 660px;
   display: block;
@@ -17,8 +21,8 @@
 .zoomin {
   position: absolute;
   border: 0px;
-  top: 0px;
-  left: 0px;
+  top: 20px;
+  left: 20px;
   width: 1000px;
   height: 660px;
     border: 1px solid #000000;
@@ -39,7 +43,7 @@
         
 div.zoom-panel {
   position: absolute;
-  border: 1px solid #000000;
+  border: 0px solid #000000;
 }
 
 div.panel {
@@ -52,6 +56,8 @@ div.panel-noclick {
   position: absolute;
   border: 1px solid #000000;
 }
+        
+
 </style>
 </head>
 <body>
@@ -204,24 +210,36 @@ div.panel-noclick {
     
 <div id="zoominview" class="zoomin">
 
-    <div class="zoom-panel" style="  
-        top: 20px;
-        left: 20px;
-        width: 527px;
-        height: 620px;">
-       <img src="https://clairesworld.github.io/exo-iii/img/1.gif" alt="image panel" style="width: 100%"  id="imgClickAndChange" onclick="changeImage(-99)" >
+    <div style="  
+        top: 0px;
+        left: 0px;
+        width: 617px;
+        height: 660px;">
+        <div class="zoom-panel" style="  
+            top: 20px;
+            left: 90px;
+            width: 527px;
+            height: 620px;">
+           <img src="https://clairesworld.github.io/exo-iii/img/1.gif" alt="image panel" style="width: 100%; border: 1px solid #000000"  id="imgClickAndChange" onclick="changeImage(-99)" >
+        </div>
+        <svg height="660" width="617" id="respond">
+<!--        <polygon class="shadow" points="0,660 90,547 617,547 527,660" />-->
+            <polygon class="shadow" points="0,587 90,547 617,547 362,660 0,660" />
+        </svg> 
     </div>
     
     
+    
     <div class="zoom-panel" style="  
         top: 20px;
-        left: 567px;
+        left: 580px;
         width: 413px;
-        height: 527px;">
+        height: 527px;
+                                   border: 0px;">
 
         <div style="  margin: 0;
                     position: absolute;
-                    top: 20%;
+                    top: 35%;
                     left: 50%;
                     -ms-transform: translate(-50%, -50%);
                     transform: translate(-50%, -50%);
@@ -233,22 +251,21 @@ div.panel-noclick {
                             position: absolute;
                                 top: 50%;
                             left: 50%;
-                            height: 270px;
-                            width: 170px;
+                            height: 85px;
+                            width: 34px;
                             -ms-transform: translate(-50%, -50%);
                             transform: translate(-50%, -50%); 
-                            border: 1px solid #000000;
                     ">
-            <img src="https://clairesworld.github.io/exo-iii/img/plinth.gif" alt="audio plinth" style="width: 100%" >
+            <img id="plinth" src="https://clairesworld.github.io/exo-iii/img/plinth.gif" alt="audio plinth" style="height: 100%;" onclick="playAudio()">
          </div>
 
 
         <div style="  margin: 0;
-position: absolute;
-top: 90%;
-left: 50%;
--ms-transform: translate(-50%, -50%);
-transform: translate(-50%, -50%);
+                        position: absolute;
+                        top: 65%;
+                        left: 50%;
+                        -ms-transform: translate(-50%, -50%);
+                        transform: translate(-50%, -50%);
                     ">
        <input type="button" onclick="klikaj('zoominview', 'zoomoutview', -99)" value="Step back">
         </div>
@@ -287,7 +304,10 @@ function changeImage(count) {
     }
     
     document.getElementById("imgClickAndChange").src = "https://clairesworld.github.io/exo-iii/img/"+String(current)+".gif";
+    
+    makeShadow("imgClickAndChange")
 
+     // update audio track
     audio.pause();
     audio = new Audio("https://clairesworld.github.io/exo-iii/sound/"+String(current)+".mp3");
     audio.load();
@@ -302,14 +322,44 @@ var playAudio = function() {
   audio.play();
   document.getElementById( "playbtn" ).setAttribute( "onclick", "javascript: pauseAudio();" );
   document.getElementById( "playbtn" ).value="Put down headphones";
+  document.getElementById( "plinth" ).setAttribute( "onclick", "javascript: pauseAudio();" );
+  document.getElementById( "plinth" ).src = "https://clairesworld.github.io/exo-iii/img/plinth-empty.gif";
 }
 
 var pauseAudio = function() {
   audio.pause();
   document.getElementById( "playbtn" ).setAttribute( "onclick", "javascript: playAudio();" );
   document.getElementById( "playbtn" ).value="Pick up headphones";
+  document.getElementById( "plinth" ).setAttribute( "onclick", "javascript: playAudio();" );
+  document.getElementById( "plinth" ).src = "https://clairesworld.github.io/exo-iii/img/plinth.gif";
 } 
     
+    function makeShadow(ident){
+        a = document.getElementById( ident )
+        var h = a.clientHeight;
+        var y = 40;
+        var x1 = 0;
+        var y1 = 20+h+y;
+        if (y1 > 660){
+            y1 = 660;
+        }
+        var x2 = 90;
+        var y2 = 20+h;
+        var x3 = 617;
+        var y3 = 20+h;
+        var x4 = 617 - 90/y*(640-h);
+        if (x4 < 0){
+            x4 = 0;
+        }
+        var y4 = 660;
+        var x5 = 0;
+        var y5 = 660;
+        
+        var coords = "<polygon class='shadow' points='"+String(x1)+","+String(y1)+" "+String(x2)+","+String(y2)+" "+String(x3)+","+String(y3)+" "+String(x4)+","+String(y4)+" "+String(x5)+","+String(y5)+"' />";
+        
+        document.getElementById( "respond" ).innerHTML = coords
+    }
+
 </script>
 
 </body>
