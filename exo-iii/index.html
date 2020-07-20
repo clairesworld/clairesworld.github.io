@@ -374,6 +374,7 @@ div.panel-noclick {
     var lightOn = 1;
 
     function klikaj(i, j, count) {
+        // switch views and highlight chosen image if gallery view
         document.getElementById(i).style.display='none';
         document.getElementById(j).style.display='block';
         pauseAudio();
@@ -384,7 +385,9 @@ div.panel-noclick {
     }
     
     function changeImage(count) {
-        if (count>=0  &&  count<=9){ // to manually set the image, call function with value 0-9, otherwise put in a random value outside this range
+        // toggle between images in gallery view
+        if (count>=0  &&  count<=9){ 
+            // to manually set the image, call function with value 0-9, otherwise put in a random value outside this range
             current=count;
         }
         else if (current<9){
@@ -410,6 +413,7 @@ div.panel-noclick {
     }
 
     var playAudio = function() {
+      // when button or image is clicked start audio track 
       audio.play();
       document.getElementById( "playbtn" ).setAttribute( "onclick", "javascript: pauseAudio();" );
       document.getElementById( "playbtn" ).value="Put down headphones";
@@ -418,6 +422,7 @@ div.panel-noclick {
     }
 
     var pauseAudio = function() {
+        // if audio is already playing then stop upon button or image click
       audio.pause();
       document.getElementById( "playbtn" ).setAttribute( "onclick", "javascript: playAudio();" );
       document.getElementById( "playbtn" ).value="Pick up headphones";
@@ -426,6 +431,7 @@ div.panel-noclick {
     } 
 
     function makeShadow(ident){
+        // update shadow effect for image gallery
         if (lightOn==1){
             a = document.getElementById( ident );
             var w = a.clientWidth;
@@ -433,11 +439,9 @@ div.panel-noclick {
             var ymax = 650;
             var ypad = 42;
             var y0 = 50;
-//            var y0 = 0.1*h;
             var xpad = 90;
             var xref = xpad+w+1;
             var yref = ypad+h;
-
             var x1 = 0;
             var y1 = yref+y0
             if (y1 > ymax){
@@ -447,18 +451,15 @@ div.panel-noclick {
             var y2 = yref;
             var x3 = xref;
             var y3 = yref;
-//            var x4 = 300;
-
             var y4 = ymax;
             var x4 = x3 - (y4 - y3)/(xpad/y0);
-//            var x4 = xref - (ymax - yref)*(xpad/y0);
             if (x4 < 0){
                 x4 = 0;
             }
             var x5 = 0;
             var y5 = ymax;
-            console.log(xpad/y0)
-            console.log((y4-y3)/(x3-x4))
+//            console.log(xpad/y0)
+//            console.log((y4-y3)/(x3-x4))
 
             var coords = "<polygon class='shadow' points='"+String(x1)+","+String(y1)+" "+String(x2)+","+String(y2)+" "+String(x3)+","+String(y3)+" "+String(x4)+","+String(y4)+" "+String(x5)+","+String(y5)+"' />";
             document.getElementById( "shadow-respond" ).innerHTML = coords
@@ -466,6 +467,7 @@ div.panel-noclick {
     }
     
     function toggleLight(){
+        // turn off shadow if lamp is clicked
         if (lightOn==1){
             lightOn=0;
             document.getElementById( "shadow-respond" ).innerHTML = "";
@@ -479,49 +481,6 @@ div.panel-noclick {
     }
     
     
-    
-/*    // create moveable book element
-    var mousePosition;
-    var offset = [0,0];
-    var div;
-    var isDown = false;
-
-    div = document.createElement("div");
-    div.style.position = "absolute";
-    div.style.right = "20px";
-    div.style.top = "20px";
-    div.style.width = "81px";
-    div.style.height = "108px";
-    div.innerHTML = "<a href='https://clairesworld.github.io/' target='_blank'><img src='https://clairesworld.github.io/exo-iii/img/book.gif' alt='CONTACT'></a>"
-
-    document.body.appendChild(div);
-
-    div.addEventListener('mousedown', function(e) {
-        isDown = true;
-        offset = [
-            div.offsetLeft - e.clientX,
-            div.offsetTop - e.clientY
-        ];
-    }, true);
-
-    document.addEventListener('mouseup', function() {
-        isDown = false;
-    }, true);
-
-    document.addEventListener('mousemove', function(event) {
-        event.preventDefault();
-        if (isDown) {
-            mousePosition = {
-
-                x : event.clientX,
-                y : event.clientY
-
-            };
-            div.style.left = (mousePosition.x + offset[0]) + 'px';
-            div.style.top  = (mousePosition.y + offset[1]) + 'px';
-        }
-    }, true);*/
-
 </script>
 
 </body>
