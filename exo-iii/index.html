@@ -65,9 +65,8 @@ div.panel-noclick {
 <body>
     
     
-    <div style="position: absolute; top:20px; left:1180px; 
-                height:108px;border:1px solid #000000">
-    <a href="https://clairesworld.github.io/" target="_blank">
+    <div style="position: absolute; top:562px; left:1040px; height:108px">
+        <a href="https://clairesworld.github.io/" target="_blank">
         <img src="https://clairesworld.github.io/exo-iii/img/book.gif" alt="CONTACT"></a>
     </div>
     
@@ -233,6 +232,12 @@ div.panel-noclick {
     </div>
     
     
+    <!-- light -->
+    <div style="position: absolute; right:80px; top:0px; height:60px; width:60px;" class="zoom-panel">
+        <img id="light" src="https://clairesworld.github.io/exo-iii/img/light.gif" style="margin:0; height:100%; width:auto"  alt="LAMP"  onclick="toggleLight()">
+    </div>
+    
+    
     <div style="  position: absolute;
         top: 0px;
         left: 0px;
@@ -246,7 +251,7 @@ div.panel-noclick {
             height: 620px;">
            <img src="https://clairesworld.github.io/exo-iii/img/1.gif" alt="image panel" style="width: 100%; border: 1px solid #000000"  id="imgClickAndChange" onclick="changeImage(-99)" >
         </div>
-        <svg height="660" width="617" id="respond">
+        <svg height="660" width="617" id="shadow-respond">
 <!--        <polygon class="shadow" points="0,660 90,547 617,547 527,660" />-->
             <polygon class="shadow" points="0,587 90,547 617,547 362,660 0,660" />
         </svg> 
@@ -300,67 +305,73 @@ div.panel-noclick {
 </div>
     
 
+    
+    
+    
+    
         
         
     
 <script>
     
-var current = 0;    
-var audio = new Audio("https://clairesworld.github.io/exo-iii/sound/1.mp3");
-    
-function klikaj(i, j, count) {
-    document.getElementById(i).style.display='none';
-    document.getElementById(j).style.display='block';
-    pauseAudio();
-    if (count>=0){
-        current=count;
-        changeImage(current)
-    }
-}
-    
-function changeImage(count) {
-    if (count>=0  &&  count<=9){ // to manually set the image, call function with value 0-9, otherwise put in a random value outside this range
-        current=count;
-    }
-    else if (current<9){
-        current++;
-    }
-    else {
-        current=0;
-    }
-    
-    document.getElementById("imgClickAndChange").src = "https://clairesworld.github.io/exo-iii/img/"+String(current)+".gif";
-    document.getElementById("progress-bar").style.width=String(100/9*current)+'%';
-    makeShadow("imgClickAndChange")
+    var current = 0;    
+    var audio = new Audio("https://clairesworld.github.io/exo-iii/sound/1.mp3");
+    var lightOn = 1;
 
-     // update audio track
-    audio.pause();
-    audio = new Audio("https://clairesworld.github.io/exo-iii/sound/"+String(current)+".mp3");
-    audio.load();
-    // if already playing then resume play
-    if (document.getElementById( "playbtn" ).value=="Put down headphones"){
-        audio.play(); 
+    function klikaj(i, j, count) {
+        document.getElementById(i).style.display='none';
+        document.getElementById(j).style.display='block';
+        pauseAudio();
+        if (count>=0){
+            current=count;
+            changeImage(current)
+        }
+    }
+    
+    function changeImage(count) {
+        if (count>=0  &&  count<=9){ // to manually set the image, call function with value 0-9, otherwise put in a random value outside this range
+            current=count;
+        }
+        else if (current<9){
+            current++;
+        }
+        else {
+            current=0;
+        }
+
+        document.getElementById("imgClickAndChange").src = "https://clairesworld.github.io/exo-iii/img/"+String(current)+".gif";
+        document.getElementById("progress-bar").style.width=String(100/9*current)+'%';
+        makeShadow("imgClickAndChange")
+
+         // update audio track
+        audio.pause();
+        audio = new Audio("https://clairesworld.github.io/exo-iii/sound/"+String(current)+".mp3");
+        audio.load();
+        // if already playing then resume play
+        if (document.getElementById( "playbtn" ).value=="Put down headphones"){
+            audio.play(); 
+        }
+
     }
 
-}
-  
-var playAudio = function() {
-  audio.play();
-  document.getElementById( "playbtn" ).setAttribute( "onclick", "javascript: pauseAudio();" );
-  document.getElementById( "playbtn" ).value="Put down headphones";
-  document.getElementById( "plinth" ).setAttribute( "onclick", "javascript: pauseAudio();" );
-  document.getElementById( "plinth" ).src = "https://clairesworld.github.io/exo-iii/img/plinth-empty.gif";
-}
+    var playAudio = function() {
+      audio.play();
+      document.getElementById( "playbtn" ).setAttribute( "onclick", "javascript: pauseAudio();" );
+      document.getElementById( "playbtn" ).value="Put down headphones";
+      document.getElementById( "plinth" ).setAttribute( "onclick", "javascript: pauseAudio();" );
+      document.getElementById( "plinth" ).src = "https://clairesworld.github.io/exo-iii/img/plinth-empty.gif";
+    }
 
-var pauseAudio = function() {
-  audio.pause();
-  document.getElementById( "playbtn" ).setAttribute( "onclick", "javascript: playAudio();" );
-  document.getElementById( "playbtn" ).value="Pick up headphones";
-  document.getElementById( "plinth" ).setAttribute( "onclick", "javascript: playAudio();" );
-  document.getElementById( "plinth" ).src = "https://clairesworld.github.io/exo-iii/img/plinth.gif";
-} 
-    
+    var pauseAudio = function() {
+      audio.pause();
+      document.getElementById( "playbtn" ).setAttribute( "onclick", "javascript: playAudio();" );
+      document.getElementById( "playbtn" ).value="Pick up headphones";
+      document.getElementById( "plinth" ).setAttribute( "onclick", "javascript: playAudio();" );
+      document.getElementById( "plinth" ).src = "https://clairesworld.github.io/exo-iii/img/plinth.gif";
+    } 
+
     function makeShadow(ident){
+        if (lightOn==1){
         a = document.getElementById( ident );
         var h = a.clientHeight;
         var yi = 40;
@@ -386,12 +397,26 @@ var pauseAudio = function() {
         
         var coords = "<polygon class='shadow' points='"+String(x1)+","+String(y1)+" "+String(x2)+","+String(y2)+" "+String(x3)+","+String(y3)+" "+String(x4)+","+String(y4)+" "+String(x5)+","+String(y5)+"' />";
         console.log('writing shadow, y'+String())
-        document.getElementById( "respond" ).innerHTML = coords
+        document.getElementById( "shadow-respond" ).innerHTML = coords
+        }
+    }
+    
+    function toggleLight(){
+        if (lightOn==1){
+            lightOn=0;
+            document.getElementById( "shadow-respond" ).innerHTML = "";
+            document.getElementById( "light" ).src = "https://clairesworld.github.io/exo-iii/img/light-off.gif";
+        }
+        else if (lightOn==0){
+            lightOn=1;
+            makeShadow("imgClickAndChange");
+            document.getElementById( "light" ).src = "https://clairesworld.github.io/exo-iii/img/light.gif";
+        }
     }
     
     
     
-    // create moveable book element
+/*    // create moveable book element
     var mousePosition;
     var offset = [0,0];
     var div;
@@ -403,7 +428,6 @@ var pauseAudio = function() {
     div.style.top = "20px";
     div.style.width = "81px";
     div.style.height = "108px";
-    div.style.border = "1px solid #000000";
     div.innerHTML = "<a href='https://clairesworld.github.io/' target='_blank'><img src='https://clairesworld.github.io/exo-iii/img/book.gif' alt='CONTACT'></a>"
 
     document.body.appendChild(div);
@@ -432,7 +456,7 @@ var pauseAudio = function() {
             div.style.left = (mousePosition.x + offset[0]) + 'px';
             div.style.top  = (mousePosition.y + offset[1]) + 'px';
         }
-    }, true);
+    }, true);*/
 
 </script>
 
