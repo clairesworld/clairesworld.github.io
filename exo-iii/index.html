@@ -39,7 +39,6 @@
   left: 0px;
   display: block;
   cursor: pointer;
-  max-width: 470px;    
 }
         
 div.zoom-panel {
@@ -57,9 +56,7 @@ div.panel-noclick {
   position: absolute;
   border: 1px solid #000000;
 }
-        
-
-        
+         
 
 </style>
 </head>
@@ -68,7 +65,8 @@ div.panel-noclick {
     
     <div style="position: absolute; top:562px; left:1040px; height:108px">
         <a href="https://clairesworld.github.io/" target="_blank">
-        <img src="https://clairesworld.github.io/exo-iii/img/book.gif" alt="CONTACT"></a>
+        <img src="https://clairesworld.github.io/exo-iii/img/book.gif" alt="CONTACT" style="height:100%; width: auto; position:absolute; top:0px; left:0px;"
+             onmouseover="this.src='https://clairesworld.github.io/exo-iii/img/book-open.gif'" onmouseout="this.src='https://clairesworld.github.io/exo-iii/img/book.gif'"></a>
     </div>
     
     
@@ -301,15 +299,15 @@ div.panel-noclick {
     <div style="  position: absolute;
         top: 0px;
         left: 0px;
-        width: 617px;
+        width: 510px;
         height: 100%;">
 
         <div class="zoom-panel" style="  position: absolute;
             top: 40px;
             left: 90px;
-            width: 527px;
+            width: 420px;
             height: 620px;">
-           <img src="https://clairesworld.github.io/exo-iii/img/1.gif" alt="image panel" style="width: 100%; border: 1px solid #000000"  id="imgClickAndChange" onclick="changeImage(-99)" >
+           <img src="https://clairesworld.github.io/exo-iii/img/1.gif" alt="image panel" style="width: 100%; height: auto; border: 1px solid #000000"  id="imgClickAndChange" onclick="changeImage(-99)" >
         </div>
         <svg height="660" width="617" id="shadow-respond">
 <!--        <polygon class="shadow" points="0,660 90,547 617,547 527,660" />-->
@@ -321,12 +319,9 @@ div.panel-noclick {
     
     <div class="zoom-panel" style="  
         top: 40px;
-        left: 580px;
+        left: 500px;
         width: 413px;
         height: 527px;border: 0px;">
-        
-
-
         
         <div style="  margin: 0;
                     position: absolute;
@@ -433,28 +428,33 @@ div.panel-noclick {
     function makeShadow(ident){
         if (lightOn==1){
             a = document.getElementById( ident );
+            var w = a.clientWidth;
             var h = a.clientHeight;
-            var h0 = 650;
-            var yi = 40;
-            var y_bot0 = yi+527;
-            var x_right0 = 617;
-            var y = 40;
+            var ymax = 650;
+            var ypad = 42;
+            var y0 = 50;
+//            var y0 = 0.1*h;
+            var xpad = 90;
+            var xref = xpad+w+1;
+            var yref = ypad+h;
+
             var x1 = 0;
-            var y1 = yi+h+y;
-            if (y1 > h0){
-                y1 = h0;
+            var y1 = yref+y0
+            if (y1 > ymax){
+                y1 = ymax;
             }
-            var x2 = 90;
-            var y2 = yi+h;
-            var x3 = x_right0;
-            var y3 = yi+h;
-            var x4 = y_bot0 - 90/y*(h0-20-h);
+            var x2 = xpad;
+            var y2 = yref;
+            var x3 = xref;
+            var y3 = yref;
+            var x4 = 300;
+            var x4 = xref - (ymax - yref)*(xpad/y0);
             if (x4 < 0){
                 x4 = 0;
             }
-            var y4 = h0;
+            var y4 = ymax;
             var x5 = 0;
-            var y5 = h0;
+            var y5 = ymax;
 
             var coords = "<polygon class='shadow' points='"+String(x1)+","+String(y1)+" "+String(x2)+","+String(y2)+" "+String(x3)+","+String(y3)+" "+String(x4)+","+String(y4)+" "+String(x5)+","+String(y5)+"' />";
             console.log('writing shadow, y'+String())
