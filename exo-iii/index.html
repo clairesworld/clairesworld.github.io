@@ -2,8 +2,8 @@
 <html lang="en"> 
 <head>
     <meta charset="utf-8"/>
-    <style>   
-    
+    <style>  
+
 .shadow{
     fill:#e2e2e2; stroke-width:0;
 }        
@@ -11,7 +11,7 @@
 .zoomout {
   position: absolute;
   border: 0px;
-  top: 20px;
+  top: 0px;
   left: 20px;
   width: 1000px;
   height: 660px;
@@ -63,6 +63,16 @@ div.panel-noclick {
 </style>
 </head>
 <body>
+    
+    
+    <div style="position: absolute; top:20px; left:1180px; 
+                height:108px;border:1px solid #000000">
+    <a href="https://clairesworld.github.io/" target="_blank">
+        <img src="https://clairesworld.github.io/exo-iii/img/book.gif" alt="CONTACT"></a>
+    </div>
+    
+    
+    
     <div id="zoomoutview" class="zoomout">
         
         
@@ -378,6 +388,51 @@ var pauseAudio = function() {
         console.log('writing shadow, y'+String())
         document.getElementById( "respond" ).innerHTML = coords
     }
+    
+    
+    
+    // create moveable book element
+    var mousePosition;
+    var offset = [0,0];
+    var div;
+    var isDown = false;
+
+    div = document.createElement("div");
+    div.style.position = "absolute";
+    div.style.right = "20px";
+    div.style.top = "20px";
+    div.style.width = "81px";
+    div.style.height = "108px";
+    div.style.border = "1px solid #000000";
+    div.innerHTML = "<a href='https://clairesworld.github.io/' target='_blank'><img src='https://clairesworld.github.io/exo-iii/img/book.gif' alt='CONTACT'></a>"
+
+    document.body.appendChild(div);
+
+    div.addEventListener('mousedown', function(e) {
+        isDown = true;
+        offset = [
+            div.offsetLeft - e.clientX,
+            div.offsetTop - e.clientY
+        ];
+    }, true);
+
+    document.addEventListener('mouseup', function() {
+        isDown = false;
+    }, true);
+
+    document.addEventListener('mousemove', function(event) {
+        event.preventDefault();
+        if (isDown) {
+            mousePosition = {
+
+                x : event.clientX,
+                y : event.clientY
+
+            };
+            div.style.left = (mousePosition.x + offset[0]) + 'px';
+            div.style.top  = (mousePosition.y + offset[1]) + 'px';
+        }
+    }, true);
 
 </script>
 
