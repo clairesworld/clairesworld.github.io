@@ -1,0 +1,487 @@
+<!DOCTYPE html>    
+<html lang="en"> 
+<head>
+    <meta charset="utf-8"/>
+    <style>  
+ 
+.shadow{
+    fill:#e2e2e2; stroke-width:0;
+}           
+ 
+.zoomout {
+  position: absolute;
+  border: 0px;
+  top: 0px;
+  left: 0px;
+  width: 960px;
+  height: 668px;
+  display: block;
+}
+
+.zoomin {
+  position: absolute;
+  border: 0px;
+  top: 20px;
+  left: 20px;
+  width: 940px;
+  height: 650px;
+  border: 1px solid #e2e2e2;
+  display: none;
+}
+
+#zoominview img {
+/*
+  margin-left: auto;
+  margin-right: auto;
+*/
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: block;
+  cursor: pointer;
+}
+        
+div.zoom-panel {
+  position: absolute;
+  border: 0px solid #000000;
+}
+
+div.panel {
+  position: absolute;
+  border: 1px solid #000000;
+  cursor: pointer;
+}
+
+div.panel-noclick {
+  position: absolute;
+  border: 1px solid #000000;
+}
+         
+
+</style>
+</head>
+<body>
+    
+    <!-- contact info -->
+    <div style="position: absolute; top:562px; left:1040px; height:108px">
+        <a href="https://clairesworld.github.io/" target="_blank">
+        <img src="img/book.gif" alt="CONTACT" style="height:100%; width: auto; position:absolute; top:0px; left:0px;"
+             onmouseover="this.src='img/book-open.gif'" onmouseout="this.src='https://clairesworld.github.io/exo-iii/img/book.gif'"></a>
+    </div>
+    
+    
+    
+    <div id="zoomoutview" class="zoomout">
+        
+        
+        <div class="panel" style="  
+  top: 20px;
+  left: 20px;
+  width: 300px;
+  height: 300px;"
+               onclick="klikaj('zoomoutview', 'zoominview', 0)">
+<img src="img/0.gif" alt="TITLE" style="width: 100%">
+</div>
+        
+        <div class="panel" style="  
+  top: 20px;
+  left: 340px;
+  width: 140px;
+  height: 140px;"
+             onclick="klikaj('zoomoutview', 'zoominview', 1)">
+<img src="img/1.gif" alt="INTRO 1" style="width: 100%">
+</div>
+        
+        
+        
+<div class="panel" style="  
+  top: 20px;
+  left: 500px;
+  width: 140px;
+  height: 140px;"
+     onclick="klikaj('zoomoutview', 'zoominview', 2)">
+<img src="img/2.gif" alt="INTRO 2" style="width: 100%">
+</div>
+
+<div class="panel" style="  
+  top: 180px;
+  left: 340px;
+  width: 140px;
+  height: 140px;"
+     onclick="klikaj('zoomoutview', 'zoominview', 3)">
+<img src="img/3.gif" alt="INTRO 3" style="width: 100%">
+</div>
+
+<div class="panel" style="  
+  top: 180px;
+  left: 500px;
+  width: 140px;
+  height: 140px;"
+     onclick="klikaj('zoomoutview', 'zoominview', 4)">
+<img src="img/4.gif" alt="INTRO 4" style="width: 100%">
+</div>
+
+<div class="panel-noclick" style="border: 0px;  
+  top: 20px;
+  left: 660px;
+  width: 300px;
+  height: 640px;"> 
+<!-- thermal history container -->
+
+  <div class="panel" style="  
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    height: 200px;"
+       onclick="klikaj('zoomoutview', 'zoominview', 5)">
+    <img src="img/5.gif" alt="THERMAL HISTORY 1" style="width: 100%"> 
+</div>
+
+  <div class="panel-noclick" style="  
+    top: 210px;
+    left: 0px;
+    width: 300px;
+    height: 20px;">
+   <img src="img/5a.gif" alt="DESCENT 1" style="width: 100%"> 
+  </div>
+
+  <div class="panel" style="  
+    top: 240px;
+    left: 0px;
+    width: 300px;
+    height: 120px;"
+       onclick="klikaj('zoomoutview', 'zoominview', 6)">
+    <img src="img/6.gif" alt="THERMAL HISTORY 2" style="width: 100%">  
+  </div>
+
+  <div class="panel-noclick" style="  
+    top: 370px;
+    left: 0px;
+    width: 300px;
+    height: 20px;"
+       >
+    <img src="img/6a.gif" alt="DESCENT 2" style="width: 100%"> 
+  </div>
+
+
+<!-- theory panel-->
+  <div class="panel-noclick" style="border: 0px;  
+    top: 400px;
+    left: 0px;
+    width: 300px;
+    height: 240px;
+                            z-index:0;
+                            position: absolute;" >
+ 
+    
+        <!-- descent panels floating on top -->
+          <div class="panel-noclick" style="
+                                top: 0px;
+                                left: 0px;
+                                width: 300px;
+                                height: 20px;
+                                z-index:1;
+                                            position:relative">
+      <img src="img/7a.gif" alt="DESCENT 3" style="width: 100%"> 
+      </div>
+
+              <div class="panel-noclick" style="
+                                top: 10px;
+                                left: 0px;
+                                width: 300px;
+                                height: 30px;
+                                z-index:1;position:relative">
+      <img src="img/7b.gif" alt="DESCENT 4" style="width: 100%"> 
+      </div>
+                  <div class="panel-noclick" style=" 
+                                top: 20px;
+                                left: 0px;
+                                width: 300px;
+                                height: 40px;
+                                z-index:1;position:relative">
+      <img src="img/7c.gif" alt="DESCENT 5" style="width: 100%"> 
+      </div>
+
+                      <div class="panel-noclick" style=" 
+                                top: 30px;
+                                left: 0px;
+                                width: 300px;
+                                height: 50px;
+                                z-index:1;position:relative">
+      <img src="img/7d.gif" alt="DESCENT 6" style="width: 100%"> 
+      </div>
+
+                          <div class="panel-noclick" style="
+                                top: 40px;
+                                left: 0px;
+                                width: 300px;
+                                height: 60px;
+                                z-index:1;position:relative">
+      <img src="img/7e.gif" alt="DESCENT 7" style="width: 100%"> 
+      </div>
+
+                              <div class="panel" style="
+                                top: 10px;
+                                left: 40px;
+                                width: 220px;
+                                height: 211px;
+                                z-index:2;position:absolute;"
+                                   onclick="klikaj('zoomoutview', 'zoominview', 7)">
+      <img src="img/7.gif" alt="THERMAL HISTORY 3" style="width: 100%"> 
+      </div>
+    </div>
+
+</div> <!-- end of thermal history-->
+
+<div class="panel-noclick" style="  
+  top: 340px;
+  left: 20px;
+  width: 50px;
+  height: 328px;">
+  <img src="img/8a.gif" alt="" style="width: 100%"> <!--id="btnLeft"-->
+</div>
+
+<div class="panel" style="  
+  top: 340px;
+  left: 90px;
+  width: 230px;
+  height: 328px;"
+     onclick="klikaj('zoomoutview', 'zoominview', 8)">
+  <img src="img/8.gif" alt="DYNAMIC TOPOGRAPHY SCALINGS" style="width: 100%"> 
+</div>
+
+<div class="panel-noclick" style="  
+  top: 340px;
+  left: 340px;
+  width: 50px;
+  height: 328px;">
+  <img src="img/9a.gif" alt="" style="width: 100%"> <!--id="btnLeft"-->
+</div>
+
+<div class="panel" style="  
+  top: 340px;
+  left: 410px;
+  width: 230px;
+  height: 328px;"
+     onclick="klikaj('zoomoutview', 'zoominview', 9)">
+  <img src="img/9.gif" alt="OCEAN CAPACITY" style="width: 100%"> 
+</div>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+<div id="zoominview" class="zoomin">
+    
+    <div style="position: absolute; top:0px; left:0px, height:20px; width:1000px; margin: 0; ">
+        <!-- progress bar-->
+        <div style="background-color:#ffffff;border-radius:0px;width:250px;height:8px;
+                    position:absolute;right:350px; top:5px;border:1px solid #000000">
+            <div style="background-color:red;border-radius:0px;width:25%;height:8px;"
+                 id="progress-bar">
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- light -->
+    <div style="position: absolute; right:80px; top:0px; height:45px; width:60px;" class="zoom-panel">
+        <img id="light" src="img/light.gif" style="margin:0; height:100%; width:auto"  alt="LAMP"  onclick="toggleLight()">
+    </div>
+    
+    
+    <div style="  position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 510px;
+        height: 100%;">
+
+        <div class="zoom-panel" style="  position: absolute;
+            top: 40px;
+            left: 90px;
+            width: 420px;
+            height: 620px;">
+           <img src="img/1.gif" alt="image panel" style="width: 100%; height: auto; border: 1px solid #000000"  id="imgClickAndChange" onclick="changeImage(-99)" >
+        </div>
+        <svg height="660" width="617" id="shadow-respond">
+<!--        <polygon class="shadow" points="0,660 90,547 617,547 527,660" />-->
+            <polygon class="shadow" points="0,587 90,547 617,547 362,660 0,660" />
+        </svg> 
+    </div>
+    
+    
+    
+    <div class="zoom-panel" style="  
+        top: 40px;
+        left: 500px;
+        width: 413px;
+        height: 527px;border: 0px;">
+        
+        <div style="  margin: 0;
+                    position: absolute;
+                    top: 35%;
+                    left: 50%;
+                    -ms-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%); 
+                    ">
+            <input type="button" id="playbtn" onclick="playAudio()" style="display: block;" value="Pick up headphones">
+         </div>
+        
+                <div style="  margin: 0;
+                            position: absolute;
+                                top: 50%;
+                            left: 50%;
+                            height: 95px;
+                            width: 34px;
+                            -ms-transform: translate(-50%, -50%);
+                            transform: translate(-50%, -50%); 
+                    ">
+            <img id="plinth" src="img/plinth.gif" alt="audio plinth" style="height: 100%;" onclick="playAudio()">
+         </div>
+
+
+        <div style="  margin: 0;
+                        position: absolute;
+                        top: 65%;
+                        left: 50%;
+                        -ms-transform: translate(-50%, -50%);
+                        transform: translate(-50%, -50%);
+                    ">
+       <input type="button" onclick="klikaj('zoominview', 'zoomoutview', -99)" value="Step back">
+        </div>
+
+    </div>
+</div>
+    
+
+    
+    
+    
+    
+        
+        
+    
+<script>
+    
+    var current = 0;    
+    var audio = new Audio("sound/0.mp3");
+    var lightOn = 1;
+
+    function klikaj(i, j, count) {
+        // switch views and highlight chosen image if gallery view
+        document.getElementById(i).style.display='none';
+        document.getElementById(j).style.display='block';
+        pauseAudio();
+        if (count>=0){
+            current=count;
+            changeImage(current)
+        }
+    }
+    
+    function changeImage(count) {
+        // toggle between images in gallery view
+        if (count>=0  &&  count<=9){ 
+            // to manually set the image, call function with value 0-9, otherwise put in a random value outside this range
+            current=count;
+        }
+        else if (current<9){
+            current++;
+        }
+        else {
+            current=0;
+        }
+
+        document.getElementById("imgClickAndChange").src = "img/"+String(current)+".gif";
+        document.getElementById("progress-bar").style.width=String(100/9*current)+'%';
+        makeShadow("imgClickAndChange")
+
+         // update audio track
+        audio.pause();
+        audio = new Audio("sound/"+String(current)+".mp3");
+        audio.load();
+        // if already playing then resume play
+        if (document.getElementById( "playbtn" ).value=="Put down headphones"){
+            audio.play(); 
+        }
+
+    }
+
+    var playAudio = function() {
+      // when button or image is clicked start audio track 
+      audio.play();
+      document.getElementById( "playbtn" ).setAttribute( "onclick", "javascript: pauseAudio();" );
+      document.getElementById( "playbtn" ).value="Put down headphones";
+      document.getElementById( "plinth" ).setAttribute( "onclick", "javascript: pauseAudio();" );
+      document.getElementById( "plinth" ).src = "img/plinth-empty.gif";
+    }
+
+    var pauseAudio = function() {
+        // if audio is already playing then stop upon button or image click
+      audio.pause();
+      document.getElementById( "playbtn" ).setAttribute( "onclick", "javascript: playAudio();" );
+      document.getElementById( "playbtn" ).value="Pick up headphones";
+      document.getElementById( "plinth" ).setAttribute( "onclick", "javascript: playAudio();" );
+      document.getElementById( "plinth" ).src = "img/plinth.gif";
+    } 
+
+    function makeShadow(ident){
+        // update shadow effect for image gallery
+        if (lightOn==1){
+            a = document.getElementById( ident );
+            var w = a.clientWidth;
+            var h = a.clientHeight;
+            var ymax = 650;
+            var ypad = 42;
+            var y0 = 50;
+            var xpad = 90;
+            var xref = xpad+w+1;
+            var yref = ypad+h;
+            var x1 = 0;
+            var y1 = yref+y0
+            if (y1 > ymax){
+                y1 = ymax;
+            }
+            var x2 = xpad;
+            var y2 = yref;
+            var x3 = xref;
+            var y3 = yref;
+            var y4 = ymax;
+            var x4 = x3 - (y4 - y3)/(xpad/y0);
+            if (x4 < 0){
+                x4 = 0;
+            }
+            var x5 = 0;
+            var y5 = ymax;
+//            console.log(xpad/y0)
+//            console.log((y4-y3)/(x3-x4))
+
+            var coords = "<polygon class='shadow' points='"+String(x1)+","+String(y1)+" "+String(x2)+","+String(y2)+" "+String(x3)+","+String(y3)+" "+String(x4)+","+String(y4)+" "+String(x5)+","+String(y5)+"' />";
+            document.getElementById( "shadow-respond" ).innerHTML = coords
+        }
+    }
+    
+    function toggleLight(){
+        // turn off shadow if lamp is clicked
+        if (lightOn==1){
+            lightOn=0;
+            document.getElementById( "shadow-respond" ).innerHTML = "";
+            document.getElementById( "light" ).src = "img/light-off.gif";
+        }
+        else if (lightOn==0){
+            lightOn=1;
+            makeShadow("imgClickAndChange");
+            document.getElementById( "light" ).src = "img/light.gif";
+        }
+    }
+    
+    
+</script>
+
+</body>
+</html>
